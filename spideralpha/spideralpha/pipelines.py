@@ -10,8 +10,11 @@ class SpideralphaPipeline(object):
     def __init__(self):
     	self.file = open("farmer.txt",mode="wb")
     def process_item(self, item, spider):
-    	self.file.write(item['title'][1].encode("utf-8"))
-    	self.file.write("\n")
-    	self.file.write(item['link'][1].encode("utf-8"))
-    	self.file.write("\n")
+    	i=0
+    	for title in item["title"]:
+    		self.file.write(title.encode("utf-8"))
+    		self.file.write("\n")
+    		self.file.write(item['link'][i].encode("utf-8"))
+    		self.file.write("\n")
+    		i=i+1
         return item
