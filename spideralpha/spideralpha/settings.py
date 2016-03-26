@@ -14,6 +14,10 @@ BOT_NAME = 'spideralpha'
 SPIDER_MODULES = ['spideralpha.spiders']
 NEWSPIDER_MODULE = 'spideralpha.spiders'
 
+ITEM_PIPELINES = {
+	'spideralpha.pipelines.SpideralphaPipeline':1,
+}
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'spideralpha (+http://www.yourdomain.com)'
